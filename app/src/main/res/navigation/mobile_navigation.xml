@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_users">
+
+    <fragment
+        android:id="@+id/nav_upcoming_bookings"
+        android:name="com.trainchatapp.fragments.BookingsListFragment"
+        android:label="Upcoming Bookings"
+        tools:layout="@layout/fragment_bookings_list" >
+        <argument
+            android:name="old"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_old_bookings"
+        android:name="com.trainchatapp.fragments.BookingsListFragment"
+        android:label="Bookings History"
+        tools:layout="@layout/fragment_bookings_list" >
+        <argument
+            android:name="old"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.trainchatapp.fragments.BookingsCalendarFragment"
+        android:label="Bookings Calendar"
+        tools:layout="@layout/fragment_bookings_calendar" />
+
+    <fragment
+        android:id="@+id/nav_myprofile"
+        android:name="com.trainchatapp.fragments.MyProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_myprofile" />
+
+    <fragment
+        android:id="@+id/nav_users"
+        android:name="com.trainchatapp.fragments.UsersFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_users" />
+
+    <fragment
+        android:id="@+id/nav_messages"
+        android:name="com.trainchatapp.fragments.ChatsFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_chats" />
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.trainchatapp.fragments.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+</navigation>

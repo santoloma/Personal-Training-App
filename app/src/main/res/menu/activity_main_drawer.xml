@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_upcoming_bookings"
+            android:icon="@drawable/ic_bookings"
+            android:title="Upcoming Bookings" />
+        <item
+            android:id="@+id/nav_old_bookings"
+            android:icon="@drawable/ic_booking_history"
+            android:title="Booking History" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_monthly_calendar_svgrepo_com"
+            android:title="Booking Calendar" />
+        <item
+            android:id="@+id/nav_myprofile"
+            android:icon="@drawable/person"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_users"
+            android:icon="@drawable/people"
+            android:title="Users" />
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/messages"
+            android:title="Messages" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/notifications"
+            android:title="Notifications" />
+    </group>
+</menu>

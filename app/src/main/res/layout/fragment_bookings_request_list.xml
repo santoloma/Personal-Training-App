@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bpBlue_focused"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center_horizontal"
+        android:text="User *username* wants to make a booking with you. \n
+\n Booking details:"
+        android:textAlignment="center"
+        android:textColor="#000"
+
+        android:textSize="16dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:divider="@drawable/background_line"
+        android:gravity="center">
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Date: "
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="24/09/2020"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Time: "
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="20:30"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Duration: "
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/duration_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="60 minutes"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Location: "
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Shadwell Basin"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Notes: "
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/notes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="  What is a youth? \n
+  Impetuous fire \n
+  What is a maid? \n
+  Ice and desire \n
+  The world wags on \n
+  A rose will bloom \n
+  It then will fade \n
+  So does a youth \n
+  So does the fairest maid \n
+  Comes a time when one sweet smile \n
+  Has it's season for awhile \n
+  Then love's in love with me \n
+  Some may think only to marry \n
+  Others will tease and tarry \n
+  Mine is the very best parry \n
+  Cupid he rules us all \n
+  Caper the caper sing me the song \n
+  Death will come soon to hush us along \n
+  Sweeter than honey and bitter as gall \n
+  Love is a past time that never will pall \n
+  Sweeter than honey and bitter as gall \n
+  Cupid he rules us all \n
+"
+                android:textColor="#000" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/accept_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/bpWhite"
+            android:src="@drawable/ic_check"
+            android:tooltipText="Accept" />
+
+        <ImageButton
+            android:id="@+id/decline_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/bpWhite"
+            android:src="@drawable/ic_decline"
+            android:tooltipText="Decline" />
+
+        <ImageButton
+            android:id="@+id/change_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/bpWhite"
+            android:src="@drawable/ic_edit"
+            android:tooltipText="Change" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "870214587932",
+    "firebase_url": "https://trainchatapp-4fa01.firebaseio.com",
+    "project_id": "trainchatapp-4fa01",
+    "storage_bucket": "trainchatapp-4fa01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870214587932:android:8ad854855769935c5231d9",
+        "android_client_info": {
+          "package_name": "com.trainchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870214587932-20jamckbb6k8g5oqv5f83huklc76nf57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJqZE1pwlfk9Gk1T0LAMTKq8FdJO3eaEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870214587932-20jamckbb6k8g5oqv5f83huklc76nf57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+
