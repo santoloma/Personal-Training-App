@@ -9,22 +9,27 @@
         android:id="@+id/search_users"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:hint="Search.." />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/search_users"
-        android:backgroundTintMode="add"
+        android:background="@drawable/ic_launcher_background"
         android:backgroundTint="#88ffffff"
-        android:background="@drawable/pic_bck"
-       >
+        android:backgroundTintMode="add">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="#334B65" />
     </RelativeLayout>
 
 </RelativeLayout>

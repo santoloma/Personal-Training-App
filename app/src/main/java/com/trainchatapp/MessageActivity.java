@@ -111,8 +111,8 @@ public class MessageActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
                 username_text.setText(user.getUsername());
-                ImageUtils.setProfileImage(getApplicationContext(), user.getImageURL(), profile_image);
-                readMessage(firebaseUser.getUid(), userid, user.getImageURL());
+                ImageUtils.setProfileImage(getApplicationContext(), user.getFacePic(), profile_image);
+                readMessage(firebaseUser.getUid(), userid, user.getFacePic());
             }
 
             @Override
@@ -242,12 +242,14 @@ public class MessageActivity extends AppCompatActivity {
 
     private void readMessage(final String myid, final String userid, final String imageURL){
         mMessages = new ArrayList<>();
+        System.out.println("readMessage method");
 
         ref = FirebaseDatabase.getInstance().getReference("Messages");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println("Reading messages");
                 mMessages.clear();
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
 

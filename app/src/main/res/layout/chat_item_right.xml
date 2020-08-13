@@ -20,7 +20,7 @@
             android:padding="10dp"
             android:text="hello"
             android:lineSpacingExtra="1dp"
-            android:textColor="#000"
+            android:textColor="@color/text_dark"
             android:textSize="16sp" />
 
         <de.hdodenhof.circleimageview.CircleImageView

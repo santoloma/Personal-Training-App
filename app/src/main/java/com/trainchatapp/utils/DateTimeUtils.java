@@ -80,10 +80,16 @@ public class DateTimeUtils {
 
 
     public static boolean isInThePast(String dateThen, String time) throws RuntimeException {
-        String timeNowFormatted = SDF_DATE.format(new Date().getTime());  //
+        String timeNowFormatted = SDF_DATE.format(new Date().getTime());
+        System.out.println("Is In The Past Method");
+        System.out.println(dateThen);
+        System.out.println(time);
 
         String[] dateTimeNow = timeNowFormatted.split("-");
         String[] dateSplit = dateThen.split("/");
+        if(dateSplit.length < 2){
+            return false;
+        }
         if(dateSplit[1].length() == 1){
             dateSplit[1] = "0" + dateSplit[1];
         }

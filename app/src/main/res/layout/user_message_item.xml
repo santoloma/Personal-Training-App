@@ -84,7 +84,7 @@
         android:textSize="10sp"
         android:background="@drawable/item_count"
         android:textAlignment="center"
-        android:textColor="#FFF"
+        android:textColor="@color/text_light"
         android:text="84"
         android:gravity="center" />
 

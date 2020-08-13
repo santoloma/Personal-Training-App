@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.trainchatapp.ProfileActivity;
 import com.trainchatapp.MessageActivity;
 import com.trainchatapp.R;
 import com.trainchatapp.model.User;
+import com.trainchatapp.utils.ImageUtils;
 import com.trainchatapp.utils.RandomTags;
 
 import java.util.List;
@@ -45,13 +47,10 @@ public class UserProfileAdapter extends RecyclerView.Adapter<UserProfileAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final User user = mUsers.get(position);
         holder.username_text.setText(user.getUsername());
-        if (user.getImageURL().equals("default")) {
-            holder.profile_image.setImageResource(R.mipmap.ic_launcher);
-        } else {
-            Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image);
-        }
+        ImageUtils.setBodyImage(mContext, user.getBodyPic(), holder.profile_image);
+
         if (!user.isStaff()) {
-            holder.star_rating.setVisibility(View.GONE);
+            holder.ratingBar.setVisibility(View.GONE);
             holder.book_button.setVisibility(View.GONE);
             holder.tags.setVisibility(View.GONE);
         }else{
@@ -94,21 +93,23 @@ public class UserProfileAdapter extends RecyclerView.Adapter<UserProfileAdapter.
         public LinearLayout tags;
         public TextView username_text;
         public ImageView profile_image;
-        public LinearLayout star_rating;
         public ImageButton message_button;
         public ImageButton book_button;
         public TextView tag1;
         public TextView tag2;
         public TextView tag3;
+        public RatingBar ratingBar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             user_item = itemView.findViewById(R.id.user_item);
             username_text = itemView.findViewById(R.id.username);
             profile_image = itemView.findViewById(R.id.profile_image);
-            star_rating = itemView.findViewById(R.id.star_rating);
             message_button = itemView.findViewById(R.id.message_button);
             book_button = itemView.findViewById(R.id.book_button);
+            ratingBar = itemView.findViewById(R.id.rating_bar);
+
+            ratingBar.setRating((float)Math.random()*5);
             tags = itemView.findViewById(R.id.tags);
             tag1 = itemView.findViewById(R.id.tag1);
             tag2 = itemView.findViewById(R.id.tag2);

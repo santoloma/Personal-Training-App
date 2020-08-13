@@ -49,7 +49,16 @@
         android:id="@+id/btn_register"
         android:background="@drawable/side_nav_bar"
         android:textColor="@color/text_light"
+        android:layout_marginBottom="20dp"
         android:text="Register"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_info"
+        android:background="@drawable/side_nav_bar"
+        android:textColor="@color/text_light"
+        android:text="About"/>
 
 
 </LinearLayout>

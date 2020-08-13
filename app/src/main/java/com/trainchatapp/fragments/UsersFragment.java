@@ -1,5 +1,6 @@
 package com.trainchatapp.fragments;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -66,6 +67,7 @@ public class UsersFragment extends Fragment {
     private void searchUsers(String s) {
         final FirebaseUser firebaseUser = DBUtils.currentUser();
 
+
         final Query query = users_ref
                 .orderByChild("search")
                 .startAt(s)
@@ -73,28 +75,39 @@ public class UsersFragment extends Fragment {
         users_ref.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
                 final User currentUser = snapshot.getValue(User.class);
                 query.addValueEventListener(new ValueEventListener() {
+
+
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         mUsers.clear();
+                        System.out.println("clearing");
+
+                        System.out.println("meant to show dialog");
+
                         for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                             User u = snapshot.getValue(User.class);
                             if(firebaseUser != null && u != null){
                                 if (!firebaseUser.getUid().equals(u.getId()) && u.isVerified()
                                         && (currentUser.isStaff() ^ u.isStaff())) {
                                     mUsers.add(u);
+                                    System.out.println("adding user");
                                 }
                             }
                         }
                         userAdapter = new UserProfileAdapter(getContext(), mUsers);
                         recyclerView.setAdapter(userAdapter);
+
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                     }
                 });
+
             }
 
             @Override
@@ -105,9 +118,15 @@ public class UsersFragment extends Fragment {
 
     private void readUsers() {
         final FirebaseUser firebaseUser = DBUtils.currentUser();
+        final Dialog d = new Dialog(this.getActivity(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        d.setContentView(R.layout.layout_loading);
+        d.show();
+
         users_ref.child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                System.out.println("showing dialog");
+
                 final User currentUser = snapshot.getValue(User.class);
                 users_ref.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -125,6 +144,7 @@ public class UsersFragment extends Fragment {
                             }
                             userAdapter = new UserProfileAdapter(getContext(), mUsers);
                             recyclerView.setAdapter(userAdapter);
+                            d.dismiss();
                         }
                     }
 
@@ -133,6 +153,7 @@ public class UsersFragment extends Fragment {
 
                     }
                 });
+
             }
 
             @Override

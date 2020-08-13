@@ -4,7 +4,8 @@ public class User {
 
     private String id;
     private String username;
-    private String imageURL;
+    private String facePic;
+    private String bodyPic;
     private String status;
     private String search;
     private String description;
@@ -13,12 +14,29 @@ public class User {
     private String firstName;
     private String lastName;
 
-    public User(String id, String username, String imageURL, String status,
+    public String getFacePic() {
+        return facePic;
+    }
+
+    public void setFacePic(String facePic) {
+        this.facePic = facePic;
+    }
+
+    public String getBodyPic() {
+        return bodyPic;
+    }
+
+    public void setBodyPic(String bodyPic) {
+        this.bodyPic = bodyPic;
+    }
+
+    public User(String id, String username, String facePic, String bodyPic, String status,
                 String search, String description, boolean staff, boolean verified,
                 String firstName, String lastName) {
         this.id = id;
         this.username = username;
-        this.imageURL = imageURL;
+        this.facePic = facePic;
+        this.bodyPic = bodyPic;
         this.status = status;
         this.search = search;
         this.description = description;
@@ -45,14 +63,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
     }
 
     public String getStatus() {
@@ -109,5 +119,22 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", bodyPic='" + bodyPic + '\'' +
+                ", facePic='" + facePic + '\'' +
+                ", status='" + status + '\'' +
+                ", search='" + search + '\'' +
+                ", description='" + description + '\'' +
+                ", staff=" + staff +
+                ", verified=" + verified +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

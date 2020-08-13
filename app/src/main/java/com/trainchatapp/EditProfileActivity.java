@@ -74,7 +74,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 firstName.setText(user.getFirstName());
                 lastName.setText(user.getLastName());
                 description.setText(user.getDescription());
-                Glide.with(getApplicationContext()).load(user.getImageURL()).into(image_profile);
+                Glide.with(getApplicationContext()).load(user.getFacePic()).into(image_profile);
             }
 
             @Override

@@ -90,6 +90,7 @@ public class NewBookingActivity extends AppCompatActivity {
         instructor_id = getIntent().getStringExtra("instructor_id");
         ref = FirebaseDatabase.getInstance().getReference("Users").child(instructor_id);
 
+        /*
         ref.addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
@@ -107,6 +108,7 @@ public class NewBookingActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+        */
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override

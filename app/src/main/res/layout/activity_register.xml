@@ -19,8 +19,8 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/side_nav_bar"
         android:src="@drawable/back"
-        android:tint="#FFFFFF"
-        app:backgroundTint="#009688" />
+        android:tint="@color/text_light"
+        app:backgroundTint="@color/main" />
     
    <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
            android:inputType="text"
            android:padding="5dp"
            android:textAlignment="center"
-           android:textColorHint="#000" />
+           android:textColorHint="@color/text_dark" />
 
        <EditText
            android:id="@+id/register_email"
@@ -86,14 +86,14 @@
            android:inputType="textEmailAddress"
            android:padding="5dp"
            android:textAlignment="center"
-           android:textColorHint="#000" />
+           android:textColorHint="@color/text_dark" />
 
        <EditText
            android:id="@+id/register_password"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="15dp"
-           android:background="#fff"
+           android:background="@color/text_light"
            android:drawableLeft="@drawable/ic_password"
            android:fontFamily="@font/andika"
            android:gravity="center_horizontal"
@@ -101,14 +101,14 @@
            android:inputType="textPassword"
            android:padding="5dp"
            android:textAlignment="center"
-           android:textColorHint="#000" />
+           android:textColorHint="@color/text_dark" />
 
        <EditText
            android:id="@+id/register_confirm_password"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="15dp"
-           android:background="#fff"
+           android:background="@color/text_light"
            android:drawableLeft="@drawable/ic_confirm_pass"
            android:fontFamily="@font/andika"
            android:gravity="center_horizontal"
@@ -116,7 +116,7 @@
            android:inputType="textPassword"
            android:padding="5dp"
            android:textAlignment="center"
-           android:textColorHint="#000" />
+           android:textColorHint="@color/text_light" />
 
        <TextView
            android:id="@+id/textView2"
@@ -140,9 +140,9 @@
                 android:fontFamily="@font/andika"
                 android:text="looking for a personal trainer."
                 android:textColor="@color/text_light"
-                android:textColorHighlight="#009688"
-                android:textColorHint="#FFFFFF"
-                android:textColorLink="#009688" />
+                android:textColorHighlight="@color/main"
+                android:textColorHint="@color/text_light"
+                android:textColorLink="@color/main" />
 
             <RadioButton
                 android:id="@+id/staffTrue_btn"
@@ -162,7 +162,7 @@
            android:background="@drawable/side_nav_bar"
            android:fontFamily="@font/andika"
            android:text="Register"
-           android:textColor="#ffffff" />
+           android:textColor="@color/text_light" />
     </LinearLayout>
 
 </RelativeLayout>

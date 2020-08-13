@@ -16,7 +16,7 @@
         android:text="User *username* wants to make a booking with you. \n
 \n Booking details:"
         android:textAlignment="center"
-        android:textColor="#000"
+        android:textColor="@color/text_dark"
 
         android:textSize="16dp" />
 
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Date: "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
 
             <TextView
                 android:id="@+id/date_text"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:text="24/09/2020"
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
         </TableRow>
 
         <TableRow android:gravity="center">
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Time: "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
 
             <TextView
                 android:id="@+id/time_text"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:text="20:30"
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
         </TableRow>
 
         <TableRow android:gravity="center">
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Duration: "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
 
             <TextView
                 android:id="@+id/duration_text"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:text="60 minutes"
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
         </TableRow>
 
         <TableRow android:gravity="center">
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Location: "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
 
             <TextView
                 android:id="@+id/location_text"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:text="Shadwell Basin"
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
         </TableRow>
 
         <TableRow android:gravity="center">
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Notes: "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
 
             <TextView
                 android:id="@+id/notes_text"
@@ -136,7 +136,7 @@
   Sweeter than honey and bitter as gall \n
   Cupid he rules us all \n
 "
-                android:textColor="#000" />
+                android:textColor="@color/text_dark" />
         </TableRow>
     </TableLayout>
 

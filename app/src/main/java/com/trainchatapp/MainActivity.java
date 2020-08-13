@@ -65,11 +65,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
         LinearLayout sideNavLayout = (LinearLayout)navigationView.getHeaderView(0);
         final CircleImageView profile_picture = sideNavLayout.findViewById(R.id.imageView);
         final TextView username_text = sideNavLayout.findViewById(R.id.textView);
-
 
         badge_message = findViewById(R.id.badge_message);
         badge_notification = findViewById(R.id.badge_notification);
@@ -124,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 username_text.setText(user.getUsername());
-                ImageUtils.setProfileImage(getApplicationContext(), user.getImageURL(), profile_picture);
+                System.out.println(user);
+                ImageUtils.setProfileImage(getApplicationContext(), user.getFacePic(), profile_picture);
             }
 
             @Override

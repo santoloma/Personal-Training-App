@@ -60,7 +60,7 @@ public class MyProfileFragment extends Fragment {
                 if (user.getId().equals(firebaseUser.getUid())) {
                     username_text.setText(user.getUsername());
                 }
-                ImageUtils.setProfileImage(getActivity(), user.getImageURL(), profile_image);
+                ImageUtils.setProfileImage(getActivity(), user.getFacePic(), profile_image);
                 profile_description.setText(user.getDescription());
             }
 

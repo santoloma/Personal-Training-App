@@ -19,7 +19,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/side_nav_bar"
         android:src="@drawable/back"
-        app:backgroundTint="#009688" />
+        app:backgroundTint="@color/main" />
 
     <LinearLayout
         android:layout_below="@+id/back_btn"
@@ -69,7 +69,7 @@
             android:inputType="text"
             android:padding="5dp"
             android:textAlignment="center"
-            android:textColorHint="#000" />
+            android:textColorHint="@color/text_dark" />
 
         <EditText
             android:id="@+id/login_password"
@@ -84,7 +84,7 @@
             android:inputType="textPassword"
             android:padding="5dp"
             android:textAlignment="center"
-            android:textColorHint="#000" />
+            android:textColorHint="@color/text_dark" />
 
         <Button
             android:id="@+id/btn_login"
@@ -94,7 +94,7 @@
             android:background="@drawable/side_nav_bar"
             android:fontFamily="@font/andika"
             android:text="Login"
-            android:textColor="#ffffff" />
+            android:textColor="@color/text_light" />
 
         <TextView
             android:id="@+id/forgotten_password"

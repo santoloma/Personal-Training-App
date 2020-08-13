@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +20,6 @@ import com.trainchatapp.model.User;
 import com.trainchatapp.utils.DBUtils;
 import com.trainchatapp.utils.ImageUtils;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class ProfileActivity extends AppCompatActivity {
@@ -73,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
                 assert user != null;
                 username_text.setText(user.getUsername());
                 profile_description.setText(user.getDescription());
-                ImageUtils.setProfileImage(getApplicationContext(), user.getImageURL(), profile_image);
+                ImageUtils.setBodyImage(getApplicationContext(), user.getBodyPic(), profile_image);
                 if(user.isStaff()){
                     profile_heading.setText("Personal Trainer Profile");
                     FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {

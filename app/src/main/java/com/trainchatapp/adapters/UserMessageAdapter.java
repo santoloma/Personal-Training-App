@@ -51,12 +51,12 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final User user = mUsers.get(position);
         holder.username_text.setText(user.getUsername());
-        if (user.getImageURL().equals("default")) {
+        if (user.getFacePic().equals("default")) {
             holder.profile_image_on.setImageResource(R.mipmap.ic_launcher);
             holder.profile_image_off.setImageResource(R.mipmap.ic_launcher);
         } else {
-            Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image_on);
-            Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image_off);
+            Glide.with(mContext).load(user.getFacePic()).into(holder.profile_image_on);
+            Glide.with(mContext).load(user.getFacePic()).into(holder.profile_image_off);
         }
 
         if (user.getStatus().equals("online")) {

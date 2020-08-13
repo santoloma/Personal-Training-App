@@ -69,7 +69,7 @@ tools:context=".ProfileActivity">
             android:layout_marginTop="20dp"
             android:fontFamily="@font/andika"
             android:text="Profile Description"
-            android:textColor="#000"
+            android:textColor="@color/text_dark"
             android:textSize="15sp" />
 
         <TextView
@@ -82,7 +82,7 @@ tools:context=".ProfileActivity">
             android:gravity="center_horizontal"
             android:text="No Description"
             android:textAlignment="center"
-            android:textColor="#000"
+            android:textColor="@color/text_dark"
             android:textSize="12sp" />
     </RelativeLayout>
 
@@ -104,7 +104,7 @@ tools:context=".ProfileActivity">
             android:fontFamily="@font/andika"
             android:src="@android:drawable/sym_action_chat"
             android:text="Message"
-            android:textColor="#fff" />
+            android:textColor="@color/text_light" />
 
         <Button
             android:id="@+id/book_btn"
@@ -116,7 +116,7 @@ tools:context=".ProfileActivity">
             android:background="@drawable/side_nav_bar"
             android:src="@android:drawable/sym_action_chat"
             android:text="Book"
-            android:textColor="#fff"
+            android:textColor="@color/text_light"
             android:visibility="gone" />
     </LinearLayout>
 </RelativeLayout>
