@@ -4,7 +4,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#009688</item>
         <item name="colorPrimaryDark">@color/background</item>
-        <item name="colorAccent">#7CFFD600</item>
+        <item name="colorAccent">#7CFFFFFF</item>
     </style>
 
     <style name="MenuStyle" parent="Theme.AppCompat.Light">

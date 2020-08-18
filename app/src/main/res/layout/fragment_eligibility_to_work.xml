@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".fragments.trainer.application.EligibilityToWorkFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Eligibility to work in the UK"
+        android:textColor="@color/text_light"
+        android:textSize="24sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:text="Choose the option that describes your work status in the UK:"
+        android:textColor="@color/text_light"
+        android:textSize="20sp"
+        android:gravity="center_horizontal" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am a British citizen or EU national with pre-settled or settled status."
+            android:textColor="@color/text_light" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am in the UK on a visa that allows me to work."
+            android:textColor="@color/text_light" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am not allowed to work in the UK."
+            android:textColor="@color/text_light" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

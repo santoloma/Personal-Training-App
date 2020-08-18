@@ -62,7 +62,6 @@ public class EditProfileActivity extends AppCompatActivity {
         firstName = findViewById(R.id.firstName);
         lastName = findViewById(R.id.lastName);
         description = findViewById(R.id.description);
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         storageRef = FirebaseStorage.getInstance().getReference("uploads");
 
@@ -97,7 +96,6 @@ public class EditProfileActivity extends AppCompatActivity {
                         description.getText().toString());
             }
         });
-
         tv_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +105,6 @@ public class EditProfileActivity extends AppCompatActivity {
                         .start(EditProfileActivity.this);
             }
         });
-
         image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,14 +118,11 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void updateProfile(String firstName, String lastName, String description) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid());
-
         HashMap<String, Object> map = new HashMap<>();
         map.put("firstName", firstName);
         map.put("lastName", lastName);
         map.put("description", description);
-
         reference.updateChildren(map);
-
         Toast.makeText(EditProfileActivity.this, "Successfully updated!", Toast.LENGTH_SHORT).show();
     }
 
@@ -188,28 +182,12 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             mImageUri = result.getUri();
-
             uploadImage();
-
         } else {
             Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        DBUtils.changeStatus(this,"offline");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        DBUtils.changeStatus(this,"online");
     }
 }

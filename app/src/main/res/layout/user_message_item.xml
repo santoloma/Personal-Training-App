@@ -1,47 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/user_item"
     android:padding="10dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp">
 
-<LinearLayout
-    android:id="@+id/profile_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image_on"
+        android:id="@+id/profile_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:civ_border_width="3dp"
-        app:civ_border_color="#CC6B6B6B"
-        android:visibility="gone"
-        android:src="@mipmap/ic_launcher" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image_off"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:civ_border_width="3dp"
-        android:visibility="gone"
-        app:civ_border_color="#21C628"
-        android:src="@mipmap/ic_launcher" />
-</LinearLayout>
-
+        android:src="@drawable/ic_face"
+        app:civ_border_color="#000000"
+        app:civ_border_width="2dp" />
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/profile_image"
-        android:layout_toEndOf="@+id/profile_image"
         android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/profile_image"
+        android:layout_toRightOf="@+id/profile_image"
+        android:textColor="#444"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="#444" />
+        android:textStyle="bold" />
 
 
     <TextView
@@ -49,20 +32,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
-        android:layout_toRightOf="@+id/profile_image"
-        android:layout_marginTop="3dp"
-        android:textColor="#777"
         android:layout_marginLeft="20dp"
-        android:textSize="14sp"
-        android:maxLines="1"/>
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/profile_image"
+        android:maxLines="1"
+        android:textColor="#777"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/last_msg_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:textColor="#444"
         android:layout_marginRight="25dp"
+        android:textColor="#444"
         android:textSize="15sp" />
 
     <ImageView
@@ -72,21 +55,21 @@
         android:layout_alignParentRight="true"
         android:scaleX="0.8"
         android:scaleY="0.8"
-        android:src="@drawable/ic_arrow"/>
+        android:src="@drawable/ic_arrow" />
 
     <TextView
         android:id="@+id/badge_unread"
-        android:visibility="gone"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="35dp"
-        android:textStyle="bold"
-        android:textSize="10sp"
         android:background="@drawable/item_count"
+        android:gravity="center"
+        android:text="84"
         android:textAlignment="center"
         android:textColor="@color/text_light"
-        android:text="84"
-        android:gravity="center" />
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,11 +77,11 @@
         android:layout_below="@+id/profile_image"
         android:layout_marginTop="10dp"
         android:background="@drawable/background_line">
+
         <TextView
             android:layout_width="5dp"
             android:layout_height="5dp"
-            android:text=""
-         />
+            android:text="" />
     </LinearLayout>
 
 </RelativeLayout>

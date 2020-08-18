@@ -1,8 +1,6 @@
 package com.trainchatapp;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Handler;
 import android.view.View;
@@ -21,29 +19,22 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        final Dialog d = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
-        d.setContentView(R.layout.splash_screen);
+        setContentView(R.layout.splash_screen);
         ++count;
         if (count == 1) {
-            d.show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    setUp(d);
+                    setUp();
                 }
             }, 2000);
         }else{
-            setUp(d);
+            setUp();
         }
     }
 
-    private void setUp(Dialog d){
+    private void setUp(){
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser != null) {
@@ -51,9 +42,6 @@ public class StartActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            if (count == 1) {
-                d.dismiss();
-            }
             setContentView(R.layout.activity_start);
             btn_register = findViewById(R.id.btn_register);
             btn_login = findViewById(R.id.btn_login);
@@ -75,7 +63,7 @@ public class StartActivity extends AppCompatActivity {
             btn_info.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(StartActivity.this, InfoActivity.class);
+                    Intent intent = new Intent(StartActivity.this, IntroActivity.class);
                     startActivity(intent);
                 }
             });

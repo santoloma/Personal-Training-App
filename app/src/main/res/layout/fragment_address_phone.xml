@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragments.trainer.application.AddressPhoneFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/background"
+        android:text="Contact Details"
+        android:textColor="@color/text_light"
+        android:textSize="24dp" />
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@color/text_light"
+        android:gravity="center_horizontal"
+        android:lines="4"
+        android:hint="Street Address"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@color/text_light"
+        android:gravity="center_horizontal"
+        android:hint="Post Code"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@color/text_light"
+        android:gravity="center_horizontal"
+        android:hint="Phone Number"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

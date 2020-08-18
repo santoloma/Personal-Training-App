@@ -115,18 +115,4 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
     }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        DBUtils.changeStatus(this, "offline");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        DBUtils.changeStatus(this, "online");
-    }
-
 }

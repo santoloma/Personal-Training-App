@@ -1,6 +1,5 @@
 package com.trainchatapp.adapters;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import com.trainchatapp.NewBookingActivity;
 import com.trainchatapp.ProfileActivity;
 import com.trainchatapp.MessageActivity;
@@ -22,7 +20,6 @@ import com.trainchatapp.R;
 import com.trainchatapp.model.User;
 import com.trainchatapp.utils.ImageUtils;
 import com.trainchatapp.utils.RandomTags;
-
 import java.util.List;
 
 public class UserProfileAdapter extends RecyclerView.Adapter<UserProfileAdapter.ViewHolder> {

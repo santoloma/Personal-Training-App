@@ -204,9 +204,6 @@ public class MessageActivity extends AppCompatActivity {
                 if (notify) {
                     System.out.println("notifying");
                     sendNotifiaction(to, user.getUsername(), mssg);
-                }else{
-                    System.out.println("not notifying " + user.getStatus());
-
                 }
                 notify = false;
             }
@@ -319,13 +316,11 @@ public class MessageActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        DBUtils.changeStatus(this, "online");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         ref.removeEventListener(seenListener);
-        DBUtils.changeStatus(this, "offline");
     }
 }

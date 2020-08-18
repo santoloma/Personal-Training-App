@@ -9,10 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -49,23 +51,28 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        final NavigationView navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_old_bookings,
-                R.id.nav_upcoming_bookings,
+                R.id.nav_home,
+                R.id.nav_bookings,
                 R.id.nav_myprofile,
                 R.id.nav_users,
                 R.id.nav_messages,
-                R.id.nav_calendar,
-                R.id.nav_notifications)
+                R.id.nav_notifications,
+                R.id.nav_intro,
+                R.id.nav_application,
+                R.id.nav_schedule)
                 .setDrawerLayout(drawer)
                 .build();
+
         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navigationView.removeHeaderView(navigationView.findViewById(R.id.nav_home));
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
         LinearLayout sideNavLayout = (LinearLayout)navigationView.getHeaderView(0);
+
         final CircleImageView profile_picture = sideNavLayout.findViewById(R.id.imageView);
         final TextView username_text = sideNavLayout.findViewById(R.id.textView);
 
@@ -89,6 +96,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ref = FirebaseDatabase.getInstance().getReference("Messages");
+
+
+        DatabaseReference r = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        r.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User currentUser = snapshot.getValue(User.class);
+                if(currentUser.isStaff()){
+                    navigationView.getMenu().getItem(8).setVisible(true);
+                }else{
+                    navigationView.getMenu().getItem(4).setVisible(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
 
         ref.addValueEventListener(new ValueEventListener() {
@@ -116,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ref = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -128,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
@@ -142,11 +168,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.logout:
-                DBUtils.changeStatus(this, "offline");
                 startActivity(new Intent(MainActivity.this, StartActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 FirebaseAuth.getInstance().signOut();
                 return true;
+            case R.id.action_terms_and_conditions:
+                startActivity(new Intent(MainActivity.this, GeneralTermsAndConditions.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                return true;
+            case R.id.action_settings:
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         }
         return false;
     }
@@ -156,17 +188,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        DBUtils.changeStatus(this,"online");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        DBUtils.changeStatus(this, "offline");
     }
 }

@@ -2,7 +2,6 @@ package com.trainchatapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +21,7 @@ import com.trainchatapp.R;
 import com.trainchatapp.model.Message;
 import com.trainchatapp.model.User;
 import com.trainchatapp.utils.DateTimeUtils;
-
+import com.trainchatapp.utils.ImageUtils;
 import java.util.List;
 
 public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.ViewHolder> {
@@ -51,24 +49,8 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final User user = mUsers.get(position);
         holder.username_text.setText(user.getUsername());
-        if (user.getFacePic().equals("default")) {
-            holder.profile_image_on.setImageResource(R.mipmap.ic_launcher);
-            holder.profile_image_off.setImageResource(R.mipmap.ic_launcher);
-        } else {
-            Glide.with(mContext).load(user.getFacePic()).into(holder.profile_image_on);
-            Glide.with(mContext).load(user.getFacePic()).into(holder.profile_image_off);
-        }
-
-        if (user.getStatus().equals("online")) {
-            holder.profile_image_off.setVisibility(View.VISIBLE);
-            holder.profile_image_on.setVisibility(View.GONE);
-        } else {
-            holder.profile_image_off.setVisibility(View.GONE);
-            holder.profile_image_on.setVisibility(View.VISIBLE);
-        }
-
+        ImageUtils.setProfileImage(mContext, user.getFacePic(), holder.profile_image);
         lastMessage(user.getId(), holder.last_msg, holder.last_msg_time, holder.badge_unread);
-
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,8 +73,7 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView username_text;
-        public ImageView profile_image_on;
-        public ImageView profile_image_off;
+        public ImageView profile_image;
         public TextView last_msg;
         public TextView last_msg_time;
         public TextView badge_unread;
@@ -100,8 +81,7 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             username_text = itemView.findViewById(R.id.username);
-            profile_image_on = itemView.findViewById(R.id.profile_image_on);
-            profile_image_off = itemView.findViewById(R.id.profile_image_off);
+            profile_image = itemView.findViewById(R.id.profile_image);
             last_msg = itemView.findViewById(R.id.last_msg);
             last_msg_time = itemView.findViewById(R.id.last_msg_time);
             badge_unread = itemView.findViewById(R.id.badge_unread);

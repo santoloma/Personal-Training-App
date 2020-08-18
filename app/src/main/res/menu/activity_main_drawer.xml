@@ -2,20 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_upcoming_bookings"
-            android:icon="@drawable/ic_bookings"
-            android:title="Upcoming Bookings" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24"
+            android:title="Home" />
         <item
-            android:id="@+id/nav_old_bookings"
+            android:id="@+id/nav_bookings"
             android:icon="@drawable/ic_booking_history"
-            android:title="Booking History" />
+            android:title="Bookings" />
         <item
-            android:id="@+id/nav_calendar"
+            android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_monthly_calendar_svgrepo_com"
-            android:title="Booking Calendar" />
+            android:title="My Schedule" />
         <item
             android:id="@+id/nav_myprofile"
             android:icon="@drawable/person"
@@ -23,6 +22,7 @@
         <item
             android:id="@+id/nav_users"
             android:icon="@drawable/people"
+            android:visible="false"
             android:title="Users" />
         <item
             android:id="@+id/nav_messages"
@@ -32,5 +32,14 @@
             android:id="@+id/nav_notifications"
             android:icon="@drawable/notifications"
             android:title="Notifications" />
+        <item
+            android:id="@+id/nav_intro"
+            android:icon="@drawable/ic_intro"
+            android:title="Intro" />
+        <item
+            android:id="@+id/nav_application"
+            android:icon="@drawable/ic_submit_application"
+            android:visible="false"
+            android:title="Application" />
     </group>
 </menu>

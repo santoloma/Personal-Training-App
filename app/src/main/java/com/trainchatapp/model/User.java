@@ -6,7 +6,6 @@ public class User {
     private String username;
     private String facePic;
     private String bodyPic;
-    private String status;
     private String search;
     private String description;
     private boolean staff;
@@ -30,14 +29,13 @@ public class User {
         this.bodyPic = bodyPic;
     }
 
-    public User(String id, String username, String facePic, String bodyPic, String status,
+    public User(String id, String username, String facePic, String bodyPic,
                 String search, String description, boolean staff, boolean verified,
                 String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.facePic = facePic;
         this.bodyPic = bodyPic;
-        this.status = status;
         this.search = search;
         this.description = description;
         this.staff = staff;
@@ -63,14 +61,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getSearch() {
@@ -128,7 +118,6 @@ public class User {
                 ", username='" + username + '\'' +
                 ", bodyPic='" + bodyPic + '\'' +
                 ", facePic='" + facePic + '\'' +
-                ", status='" + status + '\'' +
                 ", search='" + search + '\'' +
                 ", description='" + description + '\'' +
                 ", staff=" + staff +

@@ -3,34 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_users">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_upcoming_bookings"
-        android:name="com.trainchatapp.fragments.BookingsListFragment"
-        android:label="Upcoming Bookings"
-        tools:layout="@layout/fragment_bookings_list" >
-        <argument
-            android:name="old"
-            app:argType="boolean"
-            android:defaultValue="false" />
-    </fragment>
+        android:id="@+id/nav_home"
+        android:name="com.trainchatapp.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_bookings_calendar" />
 
     <fragment
-        android:id="@+id/nav_old_bookings"
-        android:name="com.trainchatapp.fragments.BookingsListFragment"
-        android:label="Bookings History"
-        tools:layout="@layout/fragment_bookings_list" >
-        <argument
-            android:name="old"
-            app:argType="boolean"
-            android:defaultValue="true" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_calendar"
-        android:name="com.trainchatapp.fragments.BookingsCalendarFragment"
-        android:label="Bookings Calendar"
+        android:id="@+id/nav_bookings"
+        android:name="com.trainchatapp.fragments.TabbedBookingFragment"
+        android:label="Bookings"
         tools:layout="@layout/fragment_bookings_calendar" />
 
     <fragment
@@ -56,5 +40,23 @@
         android:name="com.trainchatapp.fragments.NotificationsFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <activity
+        android:id="@+id/nav_intro"
+        android:name="com.trainchatapp.IntroActivity"
+        android:label="Intro"
+        tools:layout="@layout/activity_intro" />
+
+    <fragment
+        android:id="@+id/nav_application"
+        android:name="com.trainchatapp.fragments.trainer.application.ApplicationFragment"
+        android:label="Application"
+        tools:layout="@layout/fragment_application" />
+
+    <fragment
+        android:id="@+id/nav_schedule"
+        android:name="com.trainchatapp.fragments.MyScheduleFragment"
+        android:label="MySchedule"
+        tools:layout="@layout/fragment_my_schedule" />
 
 </navigation>

@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import com.codetroopers.betterpickers.radialtimepicker.RadialTimePickerDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -24,7 +22,6 @@ public class NotificationsFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
         return view;
     }
 

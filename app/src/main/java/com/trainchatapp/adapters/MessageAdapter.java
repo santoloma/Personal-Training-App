@@ -15,12 +15,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.trainchatapp.utils.DateTimeUtils;
 import com.trainchatapp.model.Message;
 import com.trainchatapp.R;
+import com.trainchatapp.utils.ImageUtils;
 import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
@@ -30,7 +30,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     private Context mContext;
     private List<Message> mMessages;
     private String imageURL;
-
     FirebaseUser firebaseUser;
 
 
@@ -60,11 +59,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         spannable.setSpan(new RelativeSizeSpan(0.8125f), message.getText().length(), spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannable.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE), message.getText().length(), spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         holder.show_message.setText(spannable);
-        if(imageURL.equals("default")){
-            holder.profile_image.setImageResource(R.mipmap.ic_launcher);
-        }else{
-            Glide.with(mContext).load(imageURL).into(holder.profile_image);
-        }
+        ImageUtils.setProfileImage(mContext, imageURL, holder.profile_image);
 
         if(position == mMessages.size()-1){
             if(message.getTimeRead() != 0l){
@@ -76,7 +71,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             holder.text_seen.setVisibility(View.GONE);
         }
     }
-
 
     @Override
     public int getItemCount() {
@@ -96,7 +90,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             text_seen = itemView.findViewById(R.id.text_seen);
         }
     }
-
 
     @Override
     public int getItemViewType(int position) {

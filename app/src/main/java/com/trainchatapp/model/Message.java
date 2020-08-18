@@ -9,6 +9,18 @@ public class Message {
     private long timeSent;
     private long timeRead;
 
+    public Message() {
+
+    }
+
+    public Message(String sender, String receiver, String text, long timeSent, long timeRead) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.text = text;
+        this.timeSent = timeSent;
+        this.timeRead = timeRead;
+
+    }
 
     public String getSender() {
         return sender;
@@ -48,20 +60,5 @@ public class Message {
 
     public void setTimeRead(long timeRead) {
         this.timeRead = timeRead;
-    }
-
-
-
-    public Message(String sender, String receiver, String text, long timeSent, long timeRead) {
-        this.sender = sender;
-        this.receiver = receiver;
-        this.text = text;
-        this.timeSent = timeSent;
-        this.timeRead = timeRead;
-
-    }
-
-    public Message() {
-
     }
 }

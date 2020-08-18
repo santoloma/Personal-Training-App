@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.squareup.timessquare.CalendarPickerView;
 import com.trainchatapp.R;
 import com.trainchatapp.utils.DateTimeUtils;
-
 import java.util.Calendar;
 import java.util.Date;
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    tools:context=".fragments.trainer.application.IDVerificationFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_light"
+        android:textSize="24dp"
+        android:text="Identity Verification"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_light"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="Please upload a scanned ID document.\n Acceptable documents that can be used to prove your identity include Passport, Driving License, National ID card."
+        android:layout_marginBottom="25dp"
+        android:gravity="center_horizontal" />
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="#666666"
+        android:src="@drawable/ic_baseline_account_box_24" />
+</LinearLayout>

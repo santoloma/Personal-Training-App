@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:gravity="center_horizontal"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".fragments.trainer.application.ApplicationOverviewFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Application Overview"
+        android:textColor="@color/text_light"
+        android:textSize="24sp"
+        android:layout_margin="25sp"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/text_light"
+        android:textAlignment="center"
+        android:text="Your application looks good!\nReady to submit?"
+        android:gravity="center_horizontal" />
+</LinearLayout>

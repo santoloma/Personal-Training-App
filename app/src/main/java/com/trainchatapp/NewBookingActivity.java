@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -180,20 +179,6 @@ public class NewBookingActivity extends AppCompatActivity {
         sendNotifiaction(instructor_id, firebaseUser.getUid());
     }
 
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        DBUtils.changeStatus(this, "offline");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        DBUtils.changeStatus(this, "online");
-    }
-
-
     private void sendNotifiaction(final String receiver, final String username){
         System.out.println("send notif");
         DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
@@ -236,7 +221,6 @@ public class NewBookingActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 System.out.println("cancelled " + databaseError.getDetails());
-
             }
         });
     }

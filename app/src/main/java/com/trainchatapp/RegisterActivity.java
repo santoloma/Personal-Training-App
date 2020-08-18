@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                             User newUser = new User(userid, username, "default", "default",
-                                             "offline", username.toLowerCase(),
+                                              username.toLowerCase(),
                                          description, staff, verified, "", "");
 
 

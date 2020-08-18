@@ -29,9 +29,7 @@ public class BookingsListFragment extends Fragment {
     private RecyclerView recyclerView;
     private BookingAdapter bookingAdapter;
     private List<Booking> bookings = new ArrayList<>();
-
     private TextView heading;
-
 
     FirebaseUser firebaseUser;
     DatabaseReference ref;

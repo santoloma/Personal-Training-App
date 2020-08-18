@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/background"
+    android:paddingTop="20dp"
     tools:context=".fragments.DescriptionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_light"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp"
+        android:text="Description"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_light"
+        android:textSize="20sp"
+        android:padding="25dp"
+        android:textAlignment="center"
+        android:text="Your description will be visible to potential clients once your profile has been verified."
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:lines="10"
+        android:textAlignment="center"
+        android:background="@color/text_light"
+        android:padding="4dp"
+        android:hint="Write about yourself and your services here in 350 characters or less."
+        android:gravity="center_horizontal" />
+</LinearLayout>
