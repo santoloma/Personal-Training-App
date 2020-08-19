@@ -37,7 +37,6 @@ public class MyProfileFragment extends Fragment {
     DatabaseReference ref;
     StorageReference storageReference;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

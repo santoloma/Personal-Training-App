@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/send_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GeneralTermsAndConditions"></activity>
+        <activity android:name=".GeneralTermsAndConditions" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".TrainerApplicationActivity" />
         <activity android:name=".EditProfileActivity" />

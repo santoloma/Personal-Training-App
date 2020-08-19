@@ -47,8 +47,8 @@ public class IntroActivity extends AppCompatActivity {
 
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Welcome to ITrain", "Whether you are a personal trainer looking to expand your client base or a client looking for a great personal training experience, you have come to the right place! ", R.drawable.img1));
-        mList.add(new ScreenItem("How It Works", "For Personal Trainers\n Create and account, fill out the application. Once approved, you can training clients!\n For Clients \n Create an account, enter you location. Look for personal trainers in your area. Book an appointment, start training!", R.drawable.calendar_bg_selector));
-        mList.add(new ScreenItem("Easy Payment", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.bp_material_key_background));
+        mList.add(new ScreenItem("How It Works", "For Personal Trainers\n Create and account, fill out the application. Once approved, you can training clients!\n For Clients \n Create an account, enter you location. Look for personal trainers in your area. Book an appointment, start training!", R.drawable.img2));
+        mList.add(new ScreenItem("Easy Payment", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img3));
 
         screenPager = findViewById(R.id.screen_viewpager);
         introViewPagerAdapter = new IntroViewPagerAdapter(this, mList);

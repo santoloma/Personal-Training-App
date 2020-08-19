@@ -36,6 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private NavController navController;
     private TextView badge_message;
     private TextView badge_notification;
     private RelativeLayout badge_message_layout;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .setDrawerLayout(drawer)
                 .build();
 
-        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         navigationView.removeHeaderView(navigationView.findViewById(R.id.nav_home));
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     navigationView.getMenu().getItem(8).setVisible(true);
                 }else{
                     navigationView.getMenu().getItem(4).setVisible(true);
+                    navigationView.getMenu().getItem(2).setVisible(false);
                 }
             }
 
@@ -189,4 +191,19 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void navigateToProfile(){
+        navController.navigate(R.id.nav_myprofile);
+    }
+
+    public void navigateToBookings(){
+        navController.navigate(R.id.nav_bookings);
+
+    }
+
+    public void navigateToIntro(){
+        navController.navigate(R.id.nav_intro);
+    }
+
+
 }

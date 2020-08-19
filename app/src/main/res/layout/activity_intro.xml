@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,6 +49,7 @@
        />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btn_get_started"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
